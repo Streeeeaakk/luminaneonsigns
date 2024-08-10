@@ -394,50 +394,52 @@ window.addEventListener("option:changed", function (e) {
     } //Function End
   } //Barcelona
 
-const updateMap = {
-  sizeAlexa: updateAlexa,
-  sizeAmsterdam: updateAmsterdam,
-  sizeMarquee: updateMarquee,
-  sizeNeonRetro: updateNeonRetro,
-  sizeTypewriter: updateTypewriter,
-  sizeAvante: updateAvante,
-  sizeBarcelona: updateBarcelona,
-};
-
-if (updateMap[option.name]) {
-  console.log("updateMap test");
-  setTimeout(updateMap[option.name], 0, option.value);
-}
-
-if (option.name === "text") {
-  console.log("test new text input");
-  const fontMap = {
-    Alexander: "sizeAlexa",
-    Amsterdam: "sizeAmsterdam",
-    MARQUEE: "sizeMarquee",
-    NeonRetro: "sizeNeonRetro",
-    Typewriter: "sizeTypewriter",
-    Avante: "sizeAvante",
-    Barcelona: "sizeBarcelona",
-  };
+  console.log("test");
 
   const updateMap = {
-    Alexander: updateAlexa,
-    Amsterdam: updateAmsterdam,
-    MARQUEE: updateMarquee,
-    NeonRetro: updateNeonRetro,
-    Typewriter: updateTypewriter,
-    Avante: updateAvante,
-    Barcelona: updateBarcelona,
+    sizeAlexa: updateAlexa,
+    sizeAmsterdam: updateAmsterdam,
+    sizeMarquee: updateMarquee,
+    sizeNeonRetro: updateNeonRetro,
+    sizeTypewriter: updateTypewriter,
+    sizeAvante: updateAvante,
+    sizeBarcelona: updateBarcelona,
   };
 
-  const fontName = fontElement.value;
-  const sizeValue = document.querySelector(
-    `input[name="properties[${fontMap[fontName]}]"]:checked`
-  ).value;
+  if (updateMap[option.name]) {
+    console.log("updateMap test");
+    setTimeout(updateMap[option.name], 0, option.value);
+  }
 
-  timeoutId = setTimeout(updateMap[fontName], 0, sizeValue);
-}
+  if (option.name === "text") {
+    console.log("test new text input");
+    const fontMap = {
+      Alexander: "sizeAlexa",
+      Amsterdam: "sizeAmsterdam",
+      MARQUEE: "sizeMarquee",
+      NeonRetro: "sizeNeonRetro",
+      Typewriter: "sizeTypewriter",
+      Avante: "sizeAvante",
+      Barcelona: "sizeBarcelona",
+    };
+
+    const updateMap = {
+      Alexander: updateAlexa,
+      Amsterdam: updateAmsterdam,
+      MARQUEE: updateMarquee,
+      NeonRetro: updateNeonRetro,
+      Typewriter: updateTypewriter,
+      Avante: updateAvante,
+      Barcelona: updateBarcelona,
+    };
+
+    const fontName = fontElement.value;
+    const sizeValue = document.querySelector(
+      `input[name="properties[${fontMap[fontName]}]"]:checked`
+    ).value;
+
+    timeoutId = setTimeout(updateMap[fontName], 0, sizeValue);
+  }
 
   textInput.addEventListener("input", function () {
     if (timeoutId) {
