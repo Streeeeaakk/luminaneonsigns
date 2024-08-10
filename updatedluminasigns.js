@@ -1,6 +1,5 @@
 window.addEventListener("option:changed", function (e) {
   var option = e.detail;
-  console.log("test3");
   var timeoutId;
   var areaElement = document.querySelector('[data-option="area"]');
   var fontElement = document.querySelector('[name="properties[font]"]');
@@ -54,6 +53,29 @@ window.addEventListener("option:changed", function (e) {
         xlarge: 10.5,
         xxlarge: 14.5,
         supersized: 19,
+      },
+    },
+    Freespirit: {
+      sizeMap: "sizeFreespirit",
+      sizeMultipliers: {
+        mini: 2,
+        extrasmall: 2.5,
+        small: 3,
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        mini: 3.5,
+        extrasmall: 4,
+        small: 5,
+        medium: 6,
+        large: 8,
+        xlarge: 10,
+        xxlarge: 13.5,
+        supersized: 18,
       },
     },
     MARQUEE: {
@@ -159,6 +181,40 @@ window.addEventListener("option:changed", function (e) {
         supersized: 26,
       },
     },
+    SCIFI: {
+      sizeMap: "sizeScifi",
+      sizeMultipliers: {
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+    },
+    Mayfair: {
+      sizeMap: "sizeMayfair",
+      sizeMultipliers: {
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        medium: 5,
+        large: 6.5,
+        xlarge: 7.5,
+        xxlarge: 10,
+        supersized: 14,
+      },
+    },
   };
 
   function updateFont(fontName, currentSizeValue) {
@@ -191,34 +247,32 @@ window.addEventListener("option:changed", function (e) {
     inputY.disabled = true;
   }
   const updateMap = {
-    sizeAlexa: (value) => updateFont("sizeAlexa", value),
-    sizeAmsterdam: (value) => updateFont("sizeAmsterdam", value),
-    sizeMarquee: (value) => updateFont("sizeMarquee", value),
-    sizeNeonRetro: (value) => updateFont("sizeNeonRetro", value),
-    sizeTypewriter: (value) => updateFont("sizeTypewriter", value),
-    sizeAvante: (value) => updateFont("sizeAvante", value),
-    sizeBarcelona: (value) => updateFont("sizeBarcelona", value),
+    sizeAlexa: (value) => updateFont("Alexander", value),
+    sizeAmsterdam: (value) => updateFont("Amsterdam", value),
+    sizeMarquee: (value) => updateFont("MARQUEE", value),
+    sizeNeonRetro: (value) => updateFont("NeonRetro", value),
+    sizeTypewriter: (value) => updateFont("Typewriter", value),
+    sizeAvante: (value) => updateFont("Avante", value),
+    sizeBarcelona: (value) => updateFont("Barcelona", value),
+    sizeScifi: (value) => updateFont("SCIFI", value),
+    sizeMayfair: (value) => updateFont("Mayfair", value),
+    sizeFreespirit: (value) => updateFont("Freespirit", value),
   };
 
   if (updateMap[option.name]) {
-    console.log("updateMap test 2");
     setTimeout(updateMap[option.name], 0, option.value);
   }
 
-
   if (option.name === "text") {
-        const fontName = fontElement.value;
-        const config = fontConfigs[fontName];
-        
-        if (!config) return;
+    const fontName = fontElement.value;
+    const config = fontConfigs[fontName];
+    if (!config) return;
 
-        const sizeValue = document.querySelector(`input[name="properties[${config.sizeMap}]"]:checked`).value;
+    const sizeValue = document.querySelector(
+      `input[name="properties[${config.sizeMap}]"]:checked`
+    ).value;
 
-        setTimeout(() => updateFont(fontName, sizeValue), 0);
-  }
-   else if (fontConfigs[option.name]) {
-        console.log("updateMap test");
-        setTimeout(() => updateFont(option.name, option.value), 0);
+    setTimeout(() => updateFont(fontName, sizeValue), 0);
   }
 
   textInput.addEventListener("input", function () {
