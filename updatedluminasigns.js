@@ -56,7 +56,7 @@ window.addEventListener("option:changed", function (e) {
       },
     },
     Buttercup: {
-      sizeMap: "Buttercup",
+      sizeMap: "sizeButtercup",
       sizeMultipliers: {
         mini: 2,
         extrasmall: 2.5,
@@ -239,7 +239,7 @@ window.addEventListener("option:changed", function (e) {
       },
     },
     Neontrace: {
-      sizeMap: "Neontrace",
+      sizeMap: "sizeNeontrace",
       sizeMultipliers: {
         small: 3,
         medium: 4,
@@ -299,7 +299,8 @@ window.addEventListener("option:changed", function (e) {
     sizeScifi: (value) => updateFont("SCIFI", value),
     sizeMayfair: (value) => updateFont("Mayfair", value),
     sizeFreespirit: (value) => updateFont("Freespirit", value),
-    Buttercup: (value) => updateFont("Buttercup", value),
+    sizeButtercup: (value) => updateFont("Buttercup", value),
+    sizeNeontrace: (value) => updateFont("Neontrace", value),
   };
 
   if (updateMap[option.name]) {
