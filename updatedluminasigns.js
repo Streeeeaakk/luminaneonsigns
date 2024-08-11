@@ -238,6 +238,25 @@ window.addEventListener("option:changed", function (e) {
         supersized: 14,
       },
     },
+    Neontrace: {
+      sizeMap: "Neontrace",
+      sizeMultipliers: {
+        small: 3,
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        small: 4,
+        medium: 5,
+        large: 6.5,
+        xlarge: 8.5,
+        xxlarge: 11,
+        supersized: 14.5,
+      },
+    },
   };
 
   function updateFont(fontName, currentSizeValue) {
