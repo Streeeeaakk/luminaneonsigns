@@ -319,6 +319,21 @@ window.addEventListener("option:changed", function (e) {
     setTimeout(() => updateFont(fontName, sizeValue), 0);
   }
 
+  if (option.name === "font") {
+    const config = fontConfigs[option.value];
+
+    if (!config) return;
+
+    setTimeout(() => {
+      const sizeValue = document.querySelector(
+        `input[name="properties[${config.sizeMap}]"]:checked`
+      ).value;
+
+      setTimeout(() => updateFont(option.value, sizeValue), 0);
+    });
+    
+  }
+
   textInput.addEventListener("input", function () {
     if (timeoutId) {
       clearTimeout(timeoutId);
