@@ -301,6 +301,23 @@ window.addEventListener("option:changed", function (e) {
         supersized: 14.5,
       },
     },
+    NeonGlow: {
+      sizeMap: "sizeNeonglow",
+      sizeMultipliers: {
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        medium: 5.5,
+        large: 6.5,
+        xlarge: 8.5,
+        xxlarge: 11.5,
+        supersized: 15.5,
+      },
+    },
   };
 
   function updateFont(fontName, currentSizeValue) {
@@ -347,6 +364,7 @@ window.addEventListener("option:changed", function (e) {
     sizeNeontrace: (value) => updateFont("Neontrace", value),
     sizePhotogenic: (value) => updateFont("Photogenic", value),
     sizeNeotokyo: (value) => updateFont("NeoTokyo", value),
+    sizeNeonglow: (value) => updateFont("NeonGlow", value),
   };
 
   if (updateMap[option.name]) {
