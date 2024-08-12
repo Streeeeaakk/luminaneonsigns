@@ -257,6 +257,27 @@ window.addEventListener("option:changed", function (e) {
         supersized: 14.5,
       },
     },
+    Photogenic: {
+      sizeMap: "sizePhotogenic",
+      sizeMultipliers: {
+        extrasmall: 2.5,
+        small: 3,
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        extrasmall: 7,
+        small: 9,
+        medium: 11,
+        large: 13,
+        xlarge: 16.5,
+        xxlarge: 23,
+        supersized: 30.5,
+      },
+    },
   };
 
   function updateFont(fontName, currentSizeValue) {
@@ -301,6 +322,7 @@ window.addEventListener("option:changed", function (e) {
     sizeFreespirit: (value) => updateFont("Freespirit", value),
     sizeButtercup: (value) => updateFont("Buttercup", value),
     sizeNeontrace: (value) => updateFont("Neontrace", value),
+    sizePhotogenic: (value) => updateFont("Photogenic", value),
   };
 
   if (updateMap[option.name]) {
