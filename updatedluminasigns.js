@@ -278,6 +278,29 @@ window.addEventListener("option:changed", function (e) {
         supersized: 30.5,
       },
     },
+    NeoTokyo: {
+      sizeMap: "sizeNeotokyo",
+      sizeMultipliers: {
+        mini: 2,
+        extrasmall: 2.5,
+        small: 3,
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        mini: 3,
+        extrasmall: 3.5,
+        small: 4.5,
+        medium: 5,
+        large: 6,
+        xlarge: 8,
+        xxlarge: 11,
+        supersized: 14.5,
+      },
+    },
   };
 
   function updateFont(fontName, currentSizeValue) {
@@ -323,6 +346,7 @@ window.addEventListener("option:changed", function (e) {
     sizeButtercup: (value) => updateFont("Buttercup", value),
     sizeNeontrace: (value) => updateFont("Neontrace", value),
     sizePhotogenic: (value) => updateFont("Photogenic", value),
+    sizeNeotokyo: (value) => updateFont("NeoTokyo", value),
   };
 
   if (updateMap[option.name]) {
