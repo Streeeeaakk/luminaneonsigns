@@ -339,6 +339,43 @@ window.addEventListener("option:changed", function (e) {
         supersized: 15.5,
       },
     },
+    Nevada: {
+      sizeMap: "sizeNevada",
+      sizeMultipliers: {
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        medium: 6.5,
+        large: 8,
+        xlarge: 10.5,
+        xxlarge: 14,
+        supersized: 18.5,
+      },
+    },
+  };
+  
+  const updateMap = {
+    sizeAlexa: (value) => updateFont("Alexander", value),
+    sizeAmsterdam: (value) => updateFont("Amsterdam", value),
+    sizeMarquee: (value) => updateFont("MARQUEE", value),
+    sizeNeonRetro: (value) => updateFont("NeonRetro", value),
+    sizeTypewriter: (value) => updateFont("Typewriter", value),
+    sizeAvante: (value) => updateFont("Avante", value),
+    sizeBarcelona: (value) => updateFont("Barcelona", value),
+    sizeScifi: (value) => updateFont("SCIFI", value),
+    sizeMayfair: (value) => updateFont("Mayfair", value),
+    sizeFreespirit: (value) => updateFont("Freespirit", value),
+    sizeButtercup: (value) => updateFont("Buttercup", value),
+    sizeNeontrace: (value) => updateFont("Neontrace", value),
+    sizePhotogenic: (value) => updateFont("Photogenic", value),
+    sizeNeotokyo: (value) => updateFont("NeoTokyo", value),
+    sizeNeonglow: (value) => updateFont("NeonGlow", value),
+    sizeSorrento: (value) => updateFont("Sorrento", value),
+    sizeNevada: (value) => updateFont("Nevada", value),
   };
 
   function updateFont(fontName, currentSizeValue) {
@@ -370,24 +407,6 @@ window.addEventListener("option:changed", function (e) {
     inputX.disabled = true;
     inputY.disabled = true;
   }
-  const updateMap = {
-    sizeAlexa: (value) => updateFont("Alexander", value),
-    sizeAmsterdam: (value) => updateFont("Amsterdam", value),
-    sizeMarquee: (value) => updateFont("MARQUEE", value),
-    sizeNeonRetro: (value) => updateFont("NeonRetro", value),
-    sizeTypewriter: (value) => updateFont("Typewriter", value),
-    sizeAvante: (value) => updateFont("Avante", value),
-    sizeBarcelona: (value) => updateFont("Barcelona", value),
-    sizeScifi: (value) => updateFont("SCIFI", value),
-    sizeMayfair: (value) => updateFont("Mayfair", value),
-    sizeFreespirit: (value) => updateFont("Freespirit", value),
-    sizeButtercup: (value) => updateFont("Buttercup", value),
-    sizeNeontrace: (value) => updateFont("Neontrace", value),
-    sizePhotogenic: (value) => updateFont("Photogenic", value),
-    sizeNeotokyo: (value) => updateFont("NeoTokyo", value),
-    sizeNeonglow: (value) => updateFont("NeonGlow", value),
-    sizeSorrento: (value) => updateFont("Sorrento", value),
-  };
 
   if (updateMap[option.name]) {
     setTimeout(updateMap[option.name], 0, option.value);
