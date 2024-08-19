@@ -32,6 +32,27 @@ window.addEventListener("option:changed", function (e) {
         supersized: 18.5,
       },
     },
+    Sorrento: {
+      sizeMap: "sizeSorrento",
+      sizeMultipliers: {
+        extrasmall: 2.5,
+        small: 3,
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        extrasmall: 6,
+        small: 7.5,
+        medium: 9,
+        large: 11,
+        xlarge: 13.5,
+        xxlarge: 19,
+        supersized: 25,
+      },
+    },
     Amsterdam: {
       sizeMap: "sizeAmsterdam",
       sizeMultipliers: {
@@ -365,6 +386,7 @@ window.addEventListener("option:changed", function (e) {
     sizePhotogenic: (value) => updateFont("Photogenic", value),
     sizeNeotokyo: (value) => updateFont("NeoTokyo", value),
     sizeNeonglow: (value) => updateFont("NeonGlow", value),
+    sizeSorrento: (value) => updateFont("Sorrento", value),
   };
 
   if (updateMap[option.name]) {
