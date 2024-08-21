@@ -53,6 +53,27 @@ window.addEventListener("option:changed", function (e) {
         supersized: 25,
       },
     },
+    Chelsea: {
+      sizeMap: "sizeChelsea",
+      sizeMultipliers: {
+        extrasmall: 2.5,
+        small: 3,
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        extrasmall: 7,
+        small: 8.5,
+        medium: 10.5,
+        large: 12.5,
+        xlarge: 16,
+        xxlarge: 22,
+        supersized: 29,
+      },
+    },
     Amsterdam: {
       sizeMap: "sizeAmsterdam",
       sizeMultipliers: {
@@ -141,6 +162,23 @@ window.addEventListener("option:changed", function (e) {
     },
     NeonRetro: {
       sizeMap: "sizeNeonRetro",
+      sizeMultipliers: {
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        medium: 4.5,
+        large: 6,
+        xlarge: 7.5,
+        xxlarge: 10,
+        supersized: 13,
+      },
+    },
+    LOVENEON: {
+      sizeMap: "sizeLoveneon",
       sizeMultipliers: {
         medium: 4,
         large: 5,
@@ -356,6 +394,29 @@ window.addEventListener("option:changed", function (e) {
         supersized: 18.5,
       },
     },
+    Greenworld: {
+      sizeMap: "sizeGreenworld",
+      sizeMultipliers: {
+        mini: 2,
+        extrasmall: 2.5,
+        small: 3,
+        medium: 4,
+        large: 5,
+        xlarge: 6,
+        xxlarge: 8,
+        supersized: 11,
+      },
+      yValues: {
+        mini: 4,
+        extrasmall: 4.5,
+        small: 6,
+        medium: 7,
+        large: 8.5,
+        xlarge: 10.5,
+        xxlarge: 14.5,
+        supersized: 19,
+      },
+    },
   };
   
   const updateMap = {
@@ -376,6 +437,9 @@ window.addEventListener("option:changed", function (e) {
     sizeNeonglow: (value) => updateFont("NeonGlow", value),
     sizeSorrento: (value) => updateFont("Sorrento", value),
     sizeNevada: (value) => updateFont("Nevada", value),
+    sizeGreenworld: (value) => updateFont("Greenworld", value),
+    sizeChelsea: (value) => updateFont("Chelsea", value),
+    sizeLoveneon: (value) => updateFont("LOVENEON", value),
   };
 
   function updateFont(fontName, currentSizeValue) {
