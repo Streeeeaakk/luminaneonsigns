@@ -31,11 +31,86 @@
         </h1>
       {% endif %}
 
-      {% if block.settings.text != blank %}
-        <div class="imageBoxInfoDescription" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
-          <p id="text-description">test description</p>
-        </div>
-      {% endif %}
+
+       
+
+       
+{% if block.settings.text != blank %}
+<div class="imageBoxInfoDescription" id="{{ block.id }}" style="color: {{ block.settings.color_text }}">
+  <p id="text-description" class="fade"> </p>
+</div>
+{% endif %}
+
+<style>
+  .fade {
+    transition: opacity 0.5s ease-in-out; /* Adjust duration as needed */
+    opacity: 1;
+    font-size: 50px;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+</style>
+
+<script>
+// Array of texts to be displayed
+const texts = [
+    `LIGHT UP<br>YOUR WORLD`,
+    `ILLUMINATE<br>YOUR SPACE`,
+    `CRAFT WITH<br>BRILLIANCE`,
+    `UNLEASH YOUR<br>CREATIVITY`,
+    `ENHANCE THE<br>COLOR OF LIFE`,
+    `KEEP SHINING<br>MORE RADIANCE`,
+    `EXPERIENCE THE<br>POWER OF LUMINA`,
+];
+
+// Initialize index for text array
+let index = 0;
+
+// Timing variables
+const textDisplayTime = 3000; // 3 seconds
+const totalCycleTime = 7000;  // 7 seconds
+const fadeDuration = 1000;    // Duration for fade-out and fade-in (1 second)
+
+// Function to change text with fade effect
+function changeText() {
+    const textElement = document.getElementById('text-description');
+    
+    if (textElement) {
+        // Apply fade out class
+        textElement.classList.add('fade-out');
+        
+        // Wait for the fade-out transition to complete before changing text
+        setTimeout(() => {
+            // Update text content
+            textElement.innerHTML = texts[index];
+            
+            // Apply fade in class
+            textElement.classList.remove('fade-out');
+            textElement.classList.add('fade-in');
+            
+            // Increment index
+            index = (index + 1) % texts.length;
+            
+            // Remove fade-in class after transition ends
+            setTimeout(() => {
+                textElement.classList.remove('fade-in');
+            }, fadeDuration);
+        }, fadeDuration);
+    }
+}
+
+// Call changeText function every totalCycleTime (7000 milliseconds)
+setInterval(changeText, totalCycleTime);
+</script>
+
+
+
 
        
 
@@ -79,6 +154,7 @@
 
           {% if block.settings.button_link != blank and block.settings.button_label != blank %}
             <a
+              
               href="{{ block.settings.button_link }}"
               class="imageBoxInfoBtn"
               style="color: {{ block.settings.color_btn_text }}; background: {{ block.settings.color_btn_bg }}"
@@ -165,9 +241,9 @@
 
     background-repeat: no-repeat;
 
-    min-height: 500px;
+    min-height: 1280px;
 
-    max-height: 800px;
+    max-height: 1280px;
 
     height: calc(100vh - 165px);
 
@@ -283,7 +359,7 @@
 
   .videoBackground .videoBoxInfoDescription,
   .videoBackground .imageBoxInfoDescription {
-    max-width: 500px;
+    max-width: 1000px;
 
     margin: 0 auto;
   }
@@ -303,7 +379,7 @@
     margin: 0 auto;
   }
 
-  @media screen and (max-width: 767px) {
+ @media screen and (max-width: 767px) {
     .main-content .videoBackground {
       margin-top: -35px;
     }

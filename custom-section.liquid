@@ -1,0 +1,170 @@
+<!-- Welcome section starts -->
+<section class="welcome">
+    <div class="container">
+        <!-- Slider Wrapper -->
+        <div class="slider-wrapper">
+            <div class="slider">
+                <div class="slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0883/0015/9293/files/1.png?v=1725100523" alt="Image 1" class="column-image" width="300px" height="280px">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0883/0015/9293/files/2.png?v=1725100526" alt="Image 2" class="column-image" width="300px" height="280px">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0883/0015/9293/files/3.png?v=1725100529" alt="Image 3" class="column-image" width="300px" height="280px">
+                </div>
+                <div class="slide">
+                    <img src="https://cdn.shopify.com/s/files/1/0883/0015/9293/files/4.png?v=1725100535" alt="Image 4" class="column-image" width="300px" height="280px">
+                </div>
+            </div>
+        </div>
+      
+        <div class="row">
+            <div class="column--second left--column" style="background-color: white;">
+                <h1 style="-webkit-text-stroke: 1px black;">
+                    WELCOME TO<br>
+                    LUMINA NEON SIGNS
+                </h1>
+                <p>&nbsp</p>
+                <h2> 
+                    <span style="-webkit-text-stroke: 1px black;">|</span>
+                    <span style="color: purple; -webkit-text-stroke: 1px purple;">ILLUMINATING</span> 
+                    <span style="color: skyblue; -webkit-text-stroke: 1px skyblue;">SPACE</span> 
+                    <span style="color: green; -webkit-text-stroke: 1px green;">EVERY</span> 
+                    <span style="color: #C71585; -webkit-text-stroke: 1px #C71585;">DAY</span>
+                    <span style="-webkit-text-stroke: 1px black;">|</span>
+                </h2>
+            </div>
+
+            <div class="column--second right--column" style="background-color: white;">
+                <div class="right--container">
+                    <p>
+                        Lumina Neon Signs, a global online marketplace that offers affordable
+                        custom LED neon signs and one of the most 
+                        premier destinations for exquisite customized 
+                        neon lights and signs.
+                    </p>
+                    <p>
+                        Whether you're looking to elevate your business, 
+                        event, or personal space, our expertly crafted neon 
+                        signs and lights will sure add a touch of brilliance 
+                        and creativity into your space. Light up your world 
+                        with Lumina!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px; /* Adjust max width as needed */
+    margin: 0 auto 20px; /* Center the slider */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.column-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.column--second {
+    flex: 1;
+    padding: 50px;
+    position: relative;
+}
+
+.left--column {
+    text-align: right;
+}
+
+.right--container {
+    -webkit-text-stroke: 0.5px black;
+    margin-top: 40px;
+    line-height: 1.5;
+    font-size: 7px;
+    letter-spacing: 0px;
+    width: 300px;
+    background-color: white;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .slider-wrapper {
+        max-width: 100%;
+    }
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".slider");
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    function goToSlide(slideIndex) {
+        slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        goToSlide(currentSlide);
+    }
+
+    // Set interval for auto-sliding (optional)
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+});
+</script>
+
+
+{% schema %}
+{
+  "name": "Section name",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Welcome section Test",
+      "category": "ADVANCED LAYOUT"
+    }
+  ]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}
